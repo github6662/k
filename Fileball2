@@ -23,3 +23,7 @@ force-http-engine-hosts = aliyun.example.com:0, quark.example.com:0, pikpak.exam
 阿里云挂载 = type=http-request,pattern=^http:\/\/aliyun\.example\.com,requires-body=1,script-path= https://raw.githubusercontent.com/github6662/k/main/aliyun.js,max-size=0,debug=1
 夸克网盘挂载 = type=http-request,pattern=^ http:\/\/quark\.example\.com,requires-body=1,script-path= https://raw.githubusercontent.com/github6662/k/main/Fileball_mount_pikpak.js,max-size=0,debug=1
 PikPak网盘挂载 = type=http-request,pattern=^ http:\/\/pikpak\.example\.com,requires-body=1,script-path= https://raw.githubusercontent.com/github6662/k/main/Fileball_mount_quark.js,max-size=0,debug=1
+
+
+[MITM]
+hostname = aliyun.example.com, quark.example.com, pikpak.example.com
