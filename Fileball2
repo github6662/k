@@ -18,8 +18,6 @@
 # 要开MPV的话必须添加
 force-http-engine-hosts = aliyun.example.com:0, quark.example.com:0, pikpak.example.com:0
 
-[MITM]
-hostname = aliyun.example.com, quark.example.com, pikpak.example.com
 
 [Script]
 阿里云挂载 = type=http-request,pattern=^http:\/\/aliyun\.example\.com,requires-body=1,script-path= https://raw.githubusercontent.com/github6662/k/main/aliyun.js,max-size=0,debug=1
