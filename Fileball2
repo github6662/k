@@ -16,7 +16,7 @@
 
 [General]
 # 要开MPV的话必须添加
-force-http-engine-hosts = aliyun.example.com:0, quark.example.com:0, pikpak.example.com:0
+force-http-engine-hosts = %APPEND% aliyun.example.com:0, quark.example.com:0, pikpak.example.com:0
 
 
 [Script]
