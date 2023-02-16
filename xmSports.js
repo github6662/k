@@ -14,18 +14,18 @@ hostname = account.huami.com
 Surge
 [Script]
 小米运动 = type=cron,cronexp="15 17 * * *",wake-system=1,timeout=3600,script-path=xmSports.js
-小米运动获取Token = type=http-response,pattern=^https:\/\/account\.huami\.com\/v2\/client\/login, requires-body=1, max-size=0, script-path=backUp/xmSports.js
+小米运动获取Token = type=http-response,pattern=^https:\/\/account\.huami\.com\/v2\/client\/login, requires-body=1, max-size=0, script-path=https://github.com/github6662/k/blob/main/xmSports.js
 圈X
 [task_local]
 # 小米运动
 15 17 * * * xmSports.js, tag=小米运动, img-url=https://6678888.xyz/quantumultX/xmbs.png, enabled=true
 [rewrite_local]
 # 小米运动获取Token
-^https:\/\/account\.huami\.com\/v2\/client\/login url script-response-body xmSports.js
+^https:\/\/account\.huami\.com\/v2\/client\/login url script-response-body 
 Loon
 [Script]
 cron "15 17 * * *" script-path=xmSports.js, tag=小米运动
-http-response ^https:\/\/account\.huami\.com\/v2\/client\/login script-path=xmSports.js, requires-body=true, timeout=3600, tag=小米运动获取Token
+http-response ^https:\/\/account\.huami\.com\/v2\/client\/login script-path=https://github.com/github6662/k/blob/main/xmSports.js, requires-body=true, timeout=3600, tag=小米运动获取Token
  */
 
 const $ = new Env('小米运动');
