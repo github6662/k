@@ -1,0 +1,93 @@
+# CC_Emby
+#DOMAIN,cc.coemn.com
+DOMAIN-SUFFIX,cc.coemn.com
+DOMAIN-SUFFIX,cc.embycc.link
+
+# 卷毛鼠
+DOMAIN-SUFFIX,cf1.jmsuper.com
+
+# 卡戎
+DOMAIN-SUFFIX,play.charontv.com
+#DOMAIN,play.charontv.com
+
+# Misty Emby
+DOMAIN-SUFFIX,misty.cx
+
+# ZDZ终点站(Terminus)
+DOMAIN-SUFFIX,emby.wtf
+DOMAIN-SUFFIX,term.wtf
+DOMAIN-SUFFIX,pub1.emby.wtf
+DOMAIN-SUFFIX,pub2.emby.wtf
+DOMAIN-SUFFIX,pub3.emby.wtf
+DOMAIN-SUFFIX,pub1.term.wtf
+DOMAIN-SUFFIX,pub2.term.wtf
+DOMAIN-SUFFIX,pub3.term.wtf
+
+# peach_emby(桃子)
+OMAIN-SUFFIX,embymv.link
+
+# HXD
+DOMAIN-SUFFIX,hxd.as174.com
+DOMAIN-SUFFIX,emby.as174.com
+DOMAIN-SUFFIX,bili.rip
+
+# 二刺螈_emby
+DOMAIN-SUFFIX,media.nijigem.by
+DOMAIN-SUFFIX,CT.cdn.bgp.yt
+DOMAIN-SUFFIX,us-w.cdn.bgp.yt
+
+# 垃圾影音(1111,Loser)
+DOMAIN-SUFFIX,xmsl.org
+
+# 纸片人
+DOMAIN-SUFFIX,embyplus.org
+
+# Marmot(土拨鼠)redde
+DOMAIN-SUFFIX,20120714.xyz
+
+# PiliPili
+DOMAIN-SUFFIX,pilipili.club
+DOMAIN-SUFFIX,pilipili.hitagi.me
+DOMAIN-SUFFIX,pilifun.top
+
+# Temby
+DOMAIN-SUFFIX,285286.xyz
+
+# SarCat
+DOMAIN-SUFFIX,catlinks.co.uk
+
+# 尘烬(未燃)
+DOMAIN-SUFFIX,emby.eu.org
+
+# 放映厅
+DOMAIN-SUFFIX,9191001.xyz
+
+# 牢大(Emby餐厅)
+DOMAIN-SUFFIX,emby-micax-ca-v2.mius.uk
+DOMAIN-SUFFIX,emby-mica-us-v1.mius.uk
+
+# Paul(保罗)
+DOMAIN-SUFFIX,imetyou.top
+
+# 飞跃彩虹
+DOMAIN-SUFFIX,7777777.buzz
+DOMAIN-SUFFIX,581658.best
+
+# 飞跃银河
+DOMAIN-SUFFIX,yhemby.top
+
+# AWA_EMBY
+DOMAIN-SUFFIX,emby.awatv.de
+
+# 探花TV(Jellyfin Porn)
+DOMAIN-SUFFIX,tanhuatv.site
+IP-CIDR,152.53.67.239/32,no-resolve
+
+# Nanflix
+DOMAIN-SUFFIX,nanflix.net
+
+# Hkaemby
+DOMAIN-SUFFIX,hka-emby.aliz.work
+
+# Nya Media
+DOMAIN-SUFFIX,bangumi.ca
