@@ -4,7 +4,7 @@ DOMAIN-SUFFIX,cc.coemn.com
 DOMAIN-SUFFIX,cc.embycc.link
 
 # 卷毛鼠
-DOMAIN-SUFFIX,cf1.jmsuper.com
+DOMAIN-SUFFIX,jmsuper.com
 
 # 卡戎
 DOMAIN-SUFFIX,play.charontv.com
@@ -57,7 +57,7 @@ DOMAIN-SUFFIX,285286.xyz
 DOMAIN-SUFFIX,catlinks.co.uk
 
 # 尘烬(未燃)
-DOMAIN-SUFFIX,emby.eu.org
+#DOMAIN-SUFFIX,emby.eu.org
 
 # 放映厅
 DOMAIN-SUFFIX,9191001.xyz
