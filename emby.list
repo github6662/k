@@ -24,7 +24,7 @@ DOMAIN-SUFFIX,pub2.term.wtf
 DOMAIN-SUFFIX,pub3.term.wtf
 
 # peach_emby(桃子)
-DOMAIN-SUFFIX,embymv.link
+#DOMAIN-SUFFIX,embymv.link
 
 # HXD
 DOMAIN-SUFFIX,hxd.as174.com
@@ -46,9 +46,9 @@ DOMAIN-SUFFIX,embyplus.org
 DOMAIN-SUFFIX,20120714.xyz
 
 # PiliPili
-DOMAIN-SUFFIX,pilipili.club
-DOMAIN-SUFFIX,pilipili.hitagi.me
-DOMAIN-SUFFIX,pilifun.top
+#DOMAIN-SUFFIX,pilipili.club
+#DOMAIN-SUFFIX,pilipili.hitagi.me
+#DOMAIN-SUFFIX,pilifun.top
 
 # Temby
 DOMAIN-SUFFIX,285286.xyz
@@ -77,7 +77,7 @@ DOMAIN-SUFFIX,581658.best
 DOMAIN-SUFFIX,yhemby.top
 
 # AWA_EMBY
-DOMAIN-SUFFIX,emby.awatv.de
+#DOMAIN-SUFFIX,emby.awatv.de
 
 # 探花TV(Jellyfin Porn)
 DOMAIN-SUFFIX,tanhuatv.site
