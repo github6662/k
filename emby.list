@@ -46,8 +46,8 @@ DOMAIN-SUFFIX,embyplus.org
 DOMAIN-SUFFIX,20120714.xyz
 
 # PiliPili
-#DOMAIN-SUFFIX,emby-direct.pilipiliultra.com
-#DOMAIN-SUFFIX,emby.pilipiliultra.com
+DOMAIN-SUFFIX,emby-direct.pilipiliultra.com
+DOMAIN-SUFFIX,emby.pilipiliultra.com
 
 # Temby
 DOMAIN-SUFFIX,285286.xyz
