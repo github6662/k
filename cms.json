@@ -1,0 +1,231 @@
+{
+  "sources": [
+    {
+      "name": "360|点播",
+      "url": "https://360zy.com/api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+    {
+      "name": "旺旺|点播",
+      "url": "https://api.wwzy.tv/api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+    {
+      "name": "墨斗|点播",
+      "url": "https://www.mdzyapi.com/api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+    {
+      "name": "黑木耳|点播",
+      "url": "https://json02.heimuer.xyz/api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+    {
+      "name": "华为吧|点播",
+      "url": "https://hw8.live/api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+    {
+      "name": "腐剧|点播",
+      "url": "http://www.fuju2024.cc:8013/ruifenglb_api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+    {
+      "name": "金鹰|点播",
+      "url": "https://jinyingzy.com/api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+    {
+      "name": "OK|点播",
+      "url": "https://okzyw9.com/api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+    {
+      "name": "宝片|点播",
+      "url": "https://zpsps.com/api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+    {
+      "name": "小黄人|点播",
+      "url": "https://iqyi.xiaohuangrentv.com/api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+    {
+      "name": "牛牛|点播",
+      "url": "https://api.niuniuzy.me/api.php/provide/vod/",
+      "use_proxy": true,
+      "enabled": true
+    },
+     {
+    "name": "丫丫|点播",
+    "url": "https://cj.yayazy.net/api.php/provide/vod/",
+    "enabled": true,
+ 
+    "use_proxy": true
+  },
+  {
+    "name": "影图|点播",
+    "url": "https://cj.vodimg.top/api.php/provide/vod/",
+    "enabled": true,
+   
+    "use_proxy": true
+  },
+  {
+    "name": "U酷|点播",
+    "url": "https://api.ukuapi.com/api.php/provide/vod/",
+    "enabled": true,
+
+    "use_proxy": true
+  },
+  {
+    "name": "豪华|点播",
+    "url": "https://hhzyapi.com/api.php/provide/vod",
+    "enabled": true,
+   
+    "use_proxy": true
+  },
+   {
+    "name": "极速|点播",
+    "url": "https://jszyapi.com/api.php/provide/vod",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "索尼|点播",
+    "url": "https://suoniapi.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "ikun|点播",
+    "url": "https://ikunzyapi.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "非凡|点播",
+    "url": "http://cj.ffzyapi.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "量子|点播",
+    "url": "https://cj.lziapi.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "暴风|点播",
+    "url": "https://bfzyapi.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "红牛|点播",
+    "url": "https://www.hongniuzy2.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "快车|点播",
+    "url": "https://caiji.kczyapi.com/api.php/provide/vod/from/kcm3u8/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "闪电|点播",
+    "url": "http://sdzyapi.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "樱花|点播",
+    "url": "https://m3u8.apiyhzy.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "卧龙|点播",
+    "url": "https://collect.wolongzyw.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "虎牙|点播",
+    "url": "https://www.huyaapi.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "飘零|点播",
+    "url": "https://p2100.net/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "无尽|点播",
+    "url": "https://api.wujinapi.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "速博|点播",
+    "url": "https://subocaiji.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "魔都|点播",
+    "url": "https://caiji.moduapi.cc/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "最大|点播",
+    "url": "http://zuidazy.me/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "火狐|点播",
+    "url": "https://hhzyapi.com/api.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  },
+   {
+    "name": "新浪|点播",
+    "url": "https://api.xinlangapi.com/xinlangapi.php/provide/vod/",
+    "enabled": true,
+  
+    "use_proxy": true
+  }
+  ]
+}
