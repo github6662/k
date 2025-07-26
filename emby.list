@@ -4,7 +4,7 @@ DOMAIN-SUFFIX,cc.coemn.com
 DOMAIN-SUFFIX,cc.embycc.link
 
 # 卷毛鼠
-DOMAIN-SUFFIX,jmsuper.com
+#DOMAIN-SUFFIX,jmsuper.com
 
 # 卡戎
 DOMAIN-SUFFIX,play.charontv.com
@@ -69,11 +69,11 @@ DOMAIN-SUFFIX,*.biliblili.uk
 DOMAIN-SUFFIX,imetyou.top
 
 # 飞跃彩虹
-DOMAIN-SUFFIX,7777777.buzz
-DOMAIN-SUFFIX,581658.best
+DOMAIN-SUFFIX,feiyue.lol
+
 
 # 飞跃银河
-DOMAIN-SUFFIX,yhemby.top
+#DOMAIN-SUFFIX,yhemby.top
 
 # AWA_EMBY
 #DOMAIN-SUFFIX,emby.awatv.de
