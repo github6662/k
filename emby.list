@@ -6,9 +6,8 @@ DOMAIN-SUFFIX,cc.embycc.link
 # 卷毛鼠
 #DOMAIN-SUFFIX,jmsuper.com
 
-# 卡戎
-DOMAIN-SUFFIX,play.charontv.com
-#DOMAIN,play.charontv.com
+# SNTP+
+DOMAIN-SUFFIX,lite.cn2gias.uk
 
 # Misty Emby
 DOMAIN-SUFFIX,misty.cx
