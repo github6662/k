@@ -1,0 +1,10 @@
+{
+    "sites": [
+       {
+            "name": "AGE动漫",
+            "type": 3,
+            "api": "csp_age",
+            "ext": "https://raw.githubusercontent.com/github6662/k/refs/heads/main/s.js"
+        }
+    ]
+}
