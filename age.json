@@ -35,7 +35,7 @@ async function getCards(ext) {
       vod_name: each.name,
       vod_pic: each.cover,
       vod_remarks: each.uptodate,
-      ext: { url: `https://api.agefans.io/v2/detail/${each.id}` }
+      ext: { url: `https://m.agefans.io/v2/detail/${each.id}` }
     })
   })
 
