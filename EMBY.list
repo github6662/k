@@ -1,0 +1,29 @@
+#All in Misty
+#DOMAIN-SUFFIX,misty.cx
+# 卷毛鼠
+#DOMAIN-SUFFIX,mini.jmsuper.com
+
+# peach_emby(桃子)
+DOMAIN-SUFFIX,embymv.link,DIRECT
+# CC_Emby
+DOMAIN-SUFFIX,cc.embycc.link,DIRECT
+
+# CC_Emby
+DOMAIN-SUFFIX,cc.coemn.com
+#DOMAIN-SUFFIX,cc.embycc.link
+# ZDZ终点站(Terminus)
+DOMAIN-SUFFIX,pub1.emby.wtf
+DOMAIN-SUFFIX,pub2.emby.wtf
+DOMAIN-SUFFIX,pub3.emby.wtf
+# hxd_emby_DE
+DOMAIN-SUFFIX,hxd.as174.com
+DOMAIN-SUFFIX,emby.as174.com
+DOMAIN-SUFFIX,bili.rip
+# 垃圾影音(1111,Loser)
+DOMAIN-SUFFIX,xmsl.org
+# paul_电报服
+DOMAIN-SUFFIX,imetyou.top
+# SaturDay.Lite
+DOMAIN-SUFFIX,lite.saturdayvideo.top
+# SNTP Media Lite
+DOMAIN-SUFFIX,lite.cn2gias.uk
