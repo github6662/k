@@ -15,7 +15,7 @@ DOMAIN-SUFFIX,cf.sfcj.org
 # 起点站公益服
 DOMAIN-SUFFIX,free3.28.al
 # Nebula Media
-DOMAIN-SUFFIX,emby.nebula-media.org
+#DOMAIN-SUFFIX,emby.nebula-media.org
 # shrek
 DOMAIN-SUFFIX,public.shrekmedia.org
 # emos
