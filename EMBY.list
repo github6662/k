@@ -1,5 +1,5 @@
 #All in Misty
-#DOMAIN-SUFFIX,misty.cx
+DOMAIN-SUFFIX,misty.cx
 # 卷毛鼠
 #DOMAIN-SUFFIX,mini.jmsuper.com
 
@@ -27,3 +27,5 @@ DOMAIN-SUFFIX,imetyou.top
 DOMAIN-SUFFIX,lite.saturdayvideo.top
 # SNTP Media Lite
 DOMAIN-SUFFIX,lite.cn2gias.uk
+# Nebula Media
+DOMAIN-SUFFIX,emby.nebula-media.org
