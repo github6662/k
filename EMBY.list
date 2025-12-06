@@ -4,9 +4,9 @@ DOMAIN-SUFFIX,misty.cx
 #DOMAIN-SUFFIX,mini.jmsuper.com
 
 # peach_emby(桃子)
-DOMAIN-SUFFIX,embymv.link,DIRECT
+#DOMAIN-SUFFIX,embymv.link,DIRECT
 # CC_Emby
-DOMAIN-SUFFIX,cc.embycc.link,DIRECT
+#DOMAIN-SUFFIX,cc.embycc.link,DIRECT
 
 # CC_Emby
 DOMAIN-SUFFIX,cc.coemn.com
