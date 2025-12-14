@@ -3,7 +3,7 @@
 🔗关联脚本: qd.js（广告完成接口）、qd2.js（广告列表接口）
 📌功能: 自动执行每日视频福利+限时彩蛋广告任务
 [task local]
-30 10 * * * https://raw.githubusercontent.com/github6662/k/refs/heads/main/qidian.js, img-url=https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/qidian.png, tag=起点读书, enabled=true
+30 10 * * * https://raw.githubusercontent.com/github6662/k/refs/heads/main/qidian_main.js, img-url=https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/qidian.png, tag=起点读书, enabled=true
 [MITM]
 hostname = h5.if.qidian.com
 */
