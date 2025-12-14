@@ -1,0 +1,53 @@
+{
+  "name": "起点读书脚本配置",
+  "author": "自定义",
+  "version": "1.0.0",
+  "description": "适配 qidian_main.js 的 BoxJs 管理配置，含功能开关、账号信息",
+  "url": "https://raw.githubusercontent.com/github6662/k/refs/heads/main/qidian_main.js",
+  "config": [
+    {
+      "key": "enableAutoSign",
+      "name": "自动签到开关",
+      "type": "boolean",
+      "default": true,
+      "desc": "开启/关闭每日自动签到领福利"
+    },
+    {
+      "key": "enableReadTask",
+      "name": "阅读时长任务开关",
+      "type": "boolean",
+      "default": true,
+      "desc": "自动积累阅读时长，完成每日任务"
+    },
+    {
+      "key": "enableLikeCollect",
+      "name": "自动点赞收藏开关",
+      "type": "boolean",
+      "default": false,
+      "desc": "自动点赞/收藏书架更新章节（默认关闭，避免误操作）"
+    },
+    {
+      "key": "qidianCookie",
+      "name": "起点读书Cookie",
+      "type": "text",
+      "default": "",
+      "desc": "抓包获取起点读书APP的Cookie（关键配置，必填）"
+    },
+    {
+      "key": "taskInterval",
+      "name": "任务执行间隔（分钟）",
+      "type": "number",
+      "default": 30,
+      "min": 10,
+      "max": 180,
+      "desc": "避免频繁请求，建议设置10-180分钟"
+    },
+    {
+      "key": "enableNotification",
+      "name": "任务通知开关",
+      "type": "boolean",
+      "default": true,
+      "desc": "任务完成后发送通知提醒（需QuantumultX开启通知权限）"
+    }
+  ]
+}
