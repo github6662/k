@@ -9,7 +9,7 @@
 重写配置:
 [rewrite local]
 https://h5.if.qidian.com/argus/api/v1/video/adv/finishWatch url script-request-body https://raw.githubusercontent.com/github6662/k/refs/heads/main/qidian_finish.js
-https://h5.if.qidian.com/argus/api/v1/video/adv/mainPage url script-response-body https://raw.githubusercontent.com/github6662/k/refs/heads/main/qd2.js
+https://h5.if.qidian.com/argus/api/v1/video/adv/mainPage url script-response-body https://raw.githubusercontent.com/github6662/k/refs/heads/main/qidian_list.js
 [MITM]
 hostname = h5.if.qidian.com
 定时任务:
