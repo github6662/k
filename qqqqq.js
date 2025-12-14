@@ -1,6 +1,6 @@
 // QuanX 重写规则（需开启）
 [rewrite_local]
-^https?:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/finishWatch url script-request-body qidian-adv.js
+^https?:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/finishWatch url script-request-body https://raw.githubusercontent.com/github6662/k/refs/heads/main/qqqqq.js
 
 // 脚本内容（新建脚本文件 qidian-adv.js）
 const config = {
