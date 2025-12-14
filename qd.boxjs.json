@@ -1,102 +1,43 @@
 {
-  "id": "qidian",
-  "name": "起点读书 - 多功能自动化",
-  "keys": [
-    "qd_session",
-    "qd_session_2",
-    "qd_taskId",
-    "qd_taskId_2",
-    "qd_timeout",
-    "enable_auto_sign",
-    "enable_read_task",
-    "enable_notify",
-    "selected_account"
-  ],
-  "desc": "适配 @mcdasheng 起点读书脚本，支持自动签到、阅读任务、多账号切换，配置后脚本自动生效",
+  "id": "qidian_single",
+  "name": "起点读书·单账号版",
+  "keys": ["qd_session", "qd_taskId", "qd_timeout", "enable_auto"],
+  "desc": "适配 @mcdasheng 脚本，单账号自动签到+阅读任务",
   "settings": [
     {
-      "id": "selected_account",
-      "name": "当前使用账号",
-      "val": "1",
-      "type": "select",
-      "options": [
-        { "label": "账号1", "value": "1" },
-        { "label": "账号2", "value": "2" }
-      ],
-      "placeholder": "",
-      "desc": "切换需要执行任务的账号"
-    },
-    {
       "id": "qd_session",
-      "name": "账号1 - qd_session",
+      "name": "账号 Session",
       "val": "",
       "type": "text",
-      "placeholder": "输入账号1的qd_session",
-      "desc": "抓包起点读书APP获取，账号1核心验证参数（必填）"
+      "placeholder": "抓包获取的qd_session值",
+      "desc": "必填！账号核心验证参数"
     },
     {
       "id": "qd_taskId",
-      "name": "账号1 - qd_taskId",
+      "name": "任务 ID",
       "val": "",
       "type": "text",
-      "placeholder": "输入账号1的qd_taskId",
-      "desc": "账号1任务关联ID，抓包任务接口获取"
-    },
-    {
-      "id": "qd_session_2",
-      "name": "账号2 - qd_session",
-      "val": "",
-      "type": "text",
-      "placeholder": "输入账号2的qd_session（可选）",
-      "desc": "多账号场景使用，账号2核心验证参数"
-    },
-    {
-      "id": "qd_taskId_2",
-      "name": "账号2 - qd_taskId",
-      "val": "",
-      "type": "text",
-      "placeholder": "输入账号2的qd_taskId（可选）",
-      "desc": "账号2任务关联ID，多账号时填写"
+      "placeholder": "抓包任务接口获取",
+      "desc": "任务关联标识，建议填写"
     },
     {
       "id": "qd_timeout",
-      "name": "任务执行间隔（秒）",
+      "name": "执行间隔(秒)",
       "val": 20,
       "type": "number",
       "min": 10,
       "max": 60,
-      "placeholder": "10-60之间",
-      "desc": "避免接口频繁请求，默认20秒（建议不低于10秒）"
+      "desc": "避免频繁请求，默认20秒"
     },
     {
-      "id": "enable_auto_sign",
-      "name": "开启自动签到",
+      "id": "enable_auto",
+      "name": "开启自动任务",
       "val": true,
       "type": "boolean",
-      "placeholder": "",
-      "desc": "自动完成每日签到领福利（默认开启）"
-    },
-    {
-      "id": "enable_read_task",
-      "name": "开启阅读时长任务",
-      "val": true,
-      "type": "boolean",
-      "placeholder": "",
-      "desc": "自动积累阅读时长，完成每日任务（默认开启）"
-    },
-    {
-      "id": "enable_notify",
-      "name": "开启任务通知",
-      "val": true,
-      "type": "boolean",
-      "placeholder": "",
-      "desc": "任务完成/失败时发送通知提醒（需开启APP通知权限）"
+      "desc": "一键开关自动签到+阅读时长任务"
     }
   ],
   "script": "https://raw.githubusercontent.com/github6662/k/refs/heads/main/qidian_main.js",
   "author": "@mcdasheng",
-  "repo": "https://github.com/mcdasheng",
-  "icons": [
-    "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/qidian.png",
-    "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/qidian.png"
-  ]
+  "icons": ["https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/qidian.png"]
+}
