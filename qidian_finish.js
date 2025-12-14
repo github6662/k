@@ -1,85 +1,114 @@
 /* 
 🥳起点读书 - 广告完成接口（优化版）
-🔗关联主脚本: qidian_main.js
+🔗关联主脚本: qidian.js
+📌功能: 模拟广告观看完成响应，适配主脚本配置
 [rewrite local]
-https\:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/finishWatch url script-request-body https://raw.githubusercontent.com/github6662/k/refs/heads/main/qidian_finish.js
+https\:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/finishWatch url script-request-body https://raw.githubusercontent.com/github6662/k/refs/heads/main/qd.js
 [MITM]
 hostname = h5.if.qidian.com
 */
 const $ = new Env("起点读书-广告完成接口");
 
-$.timeout = $.getdata("qd_timeout") ? Math.max(Number($.getdata("qd_timeout")), 5) : 20;
-$.session = $.getdata("qd_session") || "";
-$.session_2 = $.getdata("qd_session_2") || "";
-
+// 核心处理逻辑（强化防风控+异常兜底）
 (async () => {
   try {
+    // 解析原始请求
     const rawBody = $request.body || "{}";
-    const requestBody = JSON.parse(rawBody);
-    $.log(`📥收到请求 - taskId: ${requestBody.taskId || "未知"}`);
-
-    if (!requestBody.taskId) {
-      $.logErr("❌请求无效：缺少taskId");
-      $.done({ body: JSON.stringify({ Result: -1, Message: "无效请求" }) });
-      return;
+    const reqData = JSON.parse(rawBody);
+    const taskId = reqData.taskId || reqData.TaskId || "";
+    
+    $.log(`📥收到请求 - taskId: ${taskId || "未知"}`);
+    
+    // 校验请求合法性
+    if (!taskId) {
+      $.logErr("❌无效请求", "缺少taskId参数");
+      return sendResponse(-1, "无效请求：缺少taskId");
     }
-
-    const successResp = {
+    
+    // 模拟真实成功响应（添加随机因子防风控）
+    const successData = {
       Result: 0,
       Message: "success",
       Data: {
-        awardNum: 1,
-        awardType: 1,
-        taskId: requestBody.taskId,
-        finishTime: new Date().getTime()
+        awardNum: 1, // 固定奖励数量（与App一致）
+        awardType: 1, // 1=阅点（适配默认规则）
+        taskId: taskId,
+        finishTime: Date.now(),
+        requestId: generateRandomStr(32), // 随机请求ID
+        sign: generateRandomStr(16) // 模拟签名字段
       }
     };
-
-    $.log(`🎉模拟成功响应 - taskId: ${requestBody.taskId}`);
-    $.done({
-      statusCode: 200,
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify(successResp)
-    });
+    
+    $.log(`🎉模拟成功响应 - taskId: ${taskId}`);
+    sendResponse(0, "success", successData.Data);
   } catch (e) {
     $.logErr("❌接口处理异常", e);
-    $.done({
-      statusCode: 200,
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify({ Result: -2, Message: "接口处理异常" })
-    });
+    // 异常兜底响应（避免App报错）
+    sendResponse(-2, "接口处理异常", { retry: true });
   }
 })();
 
-function Env(t) {
+/**
+ * 统一响应发送函数
+ * @param {number} code 结果码（0=成功）
+ * @param {string} msg 提示信息
+ * @param {object} data 响应数据
+ */
+function sendResponse(code, msg, data = {}) {
+  const response = {
+    Result: code,
+    Message: msg,
+    Data: data,
+    Timestamp: Date.now()
+  };
+  
+  $.done({
+    statusCode: 200,
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "no-cache",
+      "Server": "qidian-ad-server" // 模拟真实服务器标识
+    },
+    body: JSON.stringify(response)
+  });
+}
+
+/**
+ * 生成随机字符串（防风控重复）
+ * @param {number} length 字符串长度
+ * @returns {string} 随机字符串
+ */
+function generateRandomStr(length = 16) {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  return Array.from({ length }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
+}
+
+// 精简环境类（仅保留接口必需功能）
+function Env(name) {
   return new (class {
-    constructor(t) {
-      (this.name = t),
-        (this.logs = []),
-        (this.startTime = new Date().getTime()),
-        this.log("", `📌${this.name} - 开始处理`);
+    constructor(name) {
+      this.name = name;
+      this.logs = [];
+      this.log(`📌${name} - 开始处理请求`);
     }
-    isSurge() { return "undefined" != typeof $environment && $environment["surge-version"]; }
-    isQuanX() { return "undefined" != typeof $task; }
-    isLoon() { return "undefined" != typeof $loon; }
-    isShadowrocket() { return "undefined" != typeof $rocket; }
-    isStash() { return "undefined" != typeof $environment && $environment["stash-version"]; }
-    getdata(t) {
-      try {
-        if (this.isSurge() || this.isShadowrocket() || this.isLoon() || this.isStash()) {
-          return $persistentStore.read(t) || "";
-        } else if (this.isQuanX()) {
-          return $prefs.valueForKey(t) || "";
-        }
-        return "";
-      } catch (e) { return ""; }
+    // 环境判断
+    isSurge() { return typeof $environment?.["surge-version"] !== "undefined"; }
+    isQuanX() { return typeof $task !== "undefined"; }
+    isLoon() { return typeof $loon !== "undefined"; }
+    isShadowrocket() { return typeof $rocket !== "undefined"; }
+    isStash() { return typeof $environment?.["stash-version"] !== "undefined"; }
+    // 日志方法
+    log(...args) {
+      const msg = args.join("\n");
+      this.logs.push(msg);
+      console.log(msg);
     }
-    log(...t) { console.log(t.join("\n")); }
-    logErr(t, s) { const errMsg = s instanceof Error ? s.message : s; this.log(`❌${this.name} - 错误: ${t}`, errMsg); }
-    done(t = {}) {
-      const costTime = (new Date().getTime() - this.startTime) / 1000;
-      this.log(`📌${this.name} - 处理结束 | 耗时: ${costTime.toFixed(1)}s`);
-      (this.isSurge() || this.isShadowrocket() || this.isQuanX() || this.isLoon() || this.isStash()) ? $done(t) : console.log("执行完成");
+    logErr(title, err) {
+      const msg = err instanceof Error ? err.message : err;
+      this.log(`❌${title}: ${msg}`);
     }
-  })(t);
+    done(data = {}) {
+      (this.isSurge() || this.isShadowrocket() || this.isQuanX() || this.isLoon() || this.isStash()) ? $done(data) : console.log("响应发送完成");
+    }
+  })(name);
 }
