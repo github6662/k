@@ -3,7 +3,7 @@
 🔗关联主脚本: qidian.js
 📌功能: 模拟广告观看完成响应，适配主脚本配置
 [rewrite local]
-https\:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/finishWatch url script-request-body https://raw.githubusercontent.com/github6662/k/refs/heads/main/qd.js
+https\:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/finishWatch url script-request-body https://raw.githubusercontent.com/github6662/k/refs/heads/main/qidian_finish.js
 [MITM]
 hostname = h5.if.qidian.com
 */
