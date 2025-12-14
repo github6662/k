@@ -1,114 +1,65 @@
-/* 
-🥳起点读书 - 广告完成接口（优化版）
-🔗关联主脚本: qidian.js
-📌功能: 模拟广告观看完成响应，适配主脚本配置
+/* 
+📌脚本功能: 获取起点读书广告会话信息
+触发方式: 我 → 福利中心 → 手动观看任意一个广告
+重写配置:
 [rewrite local]
-https\:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/finishWatch url script-request-body https://raw.githubusercontent.com/github6662/k/refs/heads/main/qidian_finish.js
+https://h5.if.qidian.com/argus/api/v1/video/adv/finishWatch url script-request-body https://raw.githubusercontent.com/github6662/k/refs/heads/main/qd.js
 [MITM]
 hostname = h5.if.qidian.com
 */
-const $ = new Env("起点读书-广告完成接口");
+const $ = new Env("起点读书-广告信息获取");
 
-// 核心处理逻辑（强化防风控+异常兜底）
-(async () => {
-  try {
-    // 解析原始请求
-    const rawBody = $request.body || "{}";
-    const reqData = JSON.parse(rawBody);
-    const taskId = reqData.taskId || reqData.TaskId || "";
-    
-    $.log(`📥收到请求 - taskId: ${taskId || "未知"}`);
-    
-    // 校验请求合法性
-    if (!taskId) {
-      $.logErr("❌无效请求", "缺少taskId参数");
-      return sendResponse(-1, "无效请求：缺少taskId");
-    }
-    
-    // 模拟真实成功响应（添加随机因子防风控）
-    const successData = {
-      Result: 0,
-      Message: "success",
-      Data: {
-        awardNum: 1, // 固定奖励数量（与App一致）
-        awardType: 1, // 1=阅点（适配默认规则）
-        taskId: taskId,
-        finishTime: Date.now(),
-        requestId: generateRandomStr(32), // 随机请求ID
-        sign: generateRandomStr(16) // 模拟签名字段
-      }
-    };
-    
-    $.log(`🎉模拟成功响应 - taskId: ${taskId}`);
-    sendResponse(0, "success", successData.Data);
-  } catch (e) {
-    $.logErr("❌接口处理异常", e);
-    // 异常兜底响应（避免App报错）
-    sendResponse(-2, "接口处理异常", { retry: true });
-  }
-})();
+// 读取已获取的TaskId
+const taskId1 = $.getdata("qd_taskId");
+const taskId2 = $.getdata("qd_taskId_2");
 
-/**
- * 统一响应发送函数
- * @param {number} code 结果码（0=成功）
- * @param {string} msg 提示信息
- * @param {object} data 响应数据
- */
-function sendResponse(code, msg, data = {}) {
-  const response = {
-    Result: code,
-    Message: msg,
-    Data: data,
-    Timestamp: Date.now()
+if (!taskId1 || !taskId2) {
+  $.log("⚠️未获取到任务ID，请先执行任务信息获取脚本");
+  $.msg($.name, "获取失败", "未获取到任务ID，请先执行任务信息获取脚本");
+  $.done();
+}
+
+// 解析请求信息
+try {
+  const session = {
+    url: $request.url,
+    body: $request.body,
+    headers: $request.headers
   };
-  
-  $.done({
-    statusCode: 200,
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      "Cache-Control": "no-cache",
-      "Server": "qidian-ad-server" // 模拟真实服务器标识
-    },
-    body: JSON.stringify(response)
-  });
+  // 精准匹配TaskId（避免误判）
+  const isTask1 = new RegExp(`"TaskId":"?${taskId1}"?`).test(session.body);
+  const isTask2 = new RegExp(`"TaskId":"?${taskId2}"?`).test(session.body);
+
+  if (isTask1) {
+    saveSession(session, "qd_session", "广告1");
+  } else if (isTask2) {
+    saveSession(session, "qd_session_2", "广告2");
+  } else {
+    throw new Error("未匹配到任务ID");
+  }
+} catch (err) {
+  $.logErr(`🔴获取失败: ${err.message}`);
+  $.msg($.name, "获取失败", err.message);
+} finally {
+  $.done();
 }
 
-/**
- * 生成随机字符串（防风控重复）
- * @param {number} length 字符串长度
- * @returns {string} 随机字符串
- */
-function generateRandomStr(length = 16) {
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  return Array.from({ length }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
+// 保存会话信息
+function saveSession(session, key, name) {
+  if (!session.url || !session.headers) {
+    $.logErr(`🔴${name}会话信息无效`);
+    $.msg($.name, "获取失败", `${name}会话信息无效`);
+    return;
+  }
+  const sessionStr = JSON.stringify(session);
+  if ($.setdata(sessionStr, key)) {
+    $.log(`🎉${name}信息获取成功`);
+    $.msg($.name, "获取成功", `${name}会话信息已保存`);
+  } else {
+    $.logErr(`🔴${name}信息保存失败`);
+    $.msg($.name, "获取失败", `${name}信息保存失败`);
+  }
 }
 
-// 精简环境类（仅保留接口必需功能）
-function Env(name) {
-  return new (class {
-    constructor(name) {
-      this.name = name;
-      this.logs = [];
-      this.log(`📌${name} - 开始处理请求`);
-    }
-    // 环境判断
-    isSurge() { return typeof $environment?.["surge-version"] !== "undefined"; }
-    isQuanX() { return typeof $task !== "undefined"; }
-    isLoon() { return typeof $loon !== "undefined"; }
-    isShadowrocket() { return typeof $rocket !== "undefined"; }
-    isStash() { return typeof $environment?.["stash-version"] !== "undefined"; }
-    // 日志方法
-    log(...args) {
-      const msg = args.join("\n");
-      this.logs.push(msg);
-      console.log(msg);
-    }
-    logErr(title, err) {
-      const msg = err instanceof Error ? err.message : err;
-      this.log(`❌${title}: ${msg}`);
-    }
-    done(data = {}) {
-      (this.isSurge() || this.isShadowrocket() || this.isQuanX() || this.isLoon() || this.isStash()) ? $done(data) : console.log("响应发送完成");
-    }
-  })(name);
-}
+// 同主脚本的简化版Env类（直接复制）
+function Env(name) { /* 与qidian.js一致，此处省略重复代码 */ }
