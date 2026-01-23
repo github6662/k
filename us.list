@@ -12,7 +12,7 @@ DOMAIN-SUFFIX,jmdanjonproxy.vip
 DOMAIN-SUFFIX,cdnbea.cc
 # 禁漫天堂
 DOMAIN-SUFFIX,cdnzack.cc
-禁漫天堂
+# 禁漫天堂
 DOMAIN-SUFFIX,18comic.vip
 # 拷贝漫画
 DOMAIN-SUFFIX,mangafunb.fun
