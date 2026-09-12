@@ -11,7 +11,7 @@ DOMAIN-SUFFIX,feiyue.lol
 # nyamedia
 DOMAIN-SUFFIX,emby.bangumi.ca
 # 非越媒体库
-#DOMAIN-SUFFIX,cf.sfcj.org
+DOMAIN-SUFFIX,cf.sfcj.org
 # 起点站公益服
 DOMAIN-SUFFIX,free3.28.al
 # Nebula Media
